@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Results</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 30px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .table-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-body">
+          <h1>Student Results</h1>
+          <!-- Display Name and Roll No above the table -->
+          <div class="text-center mb-3">
+            <p>Name: {{ studentResults?.name }}</p>
+            <p>Roll No: {{ studentResults?.rollno }}</p>
+          </div>
+          
+          <!-- Table with student results -->
+          <div class="table-container">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th colspan="2" style="text-align: center;">Subject</th>
+                    <th colspan="2" style="text-align: center;">Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">Web Technology</td>
+                    <td colspan="2" style="text-align: center;">{{ studentResults?.web_technology }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">DBMS</td>
+                    <td colspan="2" style="text-align: center;">{{ studentResults?.database_management_system }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">Maths</td>
+                    <td colspan="2" style="text-align: center;">{{ studentResults?.maths }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">OS</td>
+                    <td colspan="2" style="text-align: center;">{{ studentResults?.operating_system }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">FLAT</td>
+                    <td colspan="2" style="text-align: center;">{{ studentResults?.formal_language_automata_theory }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Buttons for actions -->
+          <div class="button-container">
+            <button type="button" class="btn btn-outline-primary mr-2" onclick="downloadPDF()">Download as PDF</button>
+            <button type="button" class="btn btn-outline-primary" onclick="applyForReevaluation()">Apply For Reevaluation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Include html2pdf.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script>
+  // Ensure the function is defined
+  function downloadPDF() {
+    // Select the element to convert to PDF
+    const element = document.querySelector('.card-body');
+
+    // Options for the PDF generation
+    const opt = {
+      margin: 1,
+      filename: 'Student_Results.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    // Use html2pdf.js to create and download the PDF
+    html2pdf().from(element).set(opt).save();
+  }
+
+  function applyForReevaluation() {
+    // Placeholder function for reevaluation logic
+    alert('Reevaluation application submitted.');
+  }
+</script>
+
+</body>
+</html>

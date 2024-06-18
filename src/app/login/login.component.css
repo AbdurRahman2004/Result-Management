@@ -1,0 +1,72 @@
+
+
+.login-container {
+    max-width: 350px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #f30a99;
+    border-top: none ;
+    border-left: none ;
+    border-right: none ;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 4px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none; /* Add bottom margin */
+}
+button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+ .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.message {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.success {
+    color: #4caf50;
+}
+
+.message {
+    color: #f44336;
+}

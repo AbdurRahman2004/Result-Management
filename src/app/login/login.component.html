@@ -1,0 +1,92 @@
+<!-- <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <section class="w-75 p-4 p-xl-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12">
+        <div class="card rounded-3">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control custom-input" [(ngModel)]="email" placeholder="Email" required>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control custom-input" [(ngModel)]="password" placeholder="Password" required>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button type="submit" class="btn btn-outline-danger login-btn" [disabled]="!loginForm.form.valid">Log in</button>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" class="btn btn-outline-danger" (click)="register()">Create new</button>
+                  </div>
+                </form>
+
+                <blockquote class="blockquote text-center mt-4">
+                  <p class="mb-0">{{ quote }}</p>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <img src="../assets/student.jpg" class="d-block mx-lg-auto img-fluid" alt="Student Image" width="700" height="500" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div> -->
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <section class="w-75 p-4 p-xl-5">
+    <h1 style="text-align: center;">Student Result Management</h1>
+    <div class="row d-flex justify-content-center">
+      <div class="col-12">
+        <div class="card rounded-3">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <h2 class="text-center">Login</h2>
+                <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+                  <p class="text-center">Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control custom-input" [(ngModel)]="loginData.email" placeholder="Email" required>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control custom-input" [(ngModel)]="loginData.password" placeholder="Password" required>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button type="submit" class="btn btn-outline-danger login-btn" [disabled]="!loginForm.form.valid">Log in</button>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" class="btn btn-outline-danger" (click)="register()">Create new</button>
+                  </div>
+                </form>
+
+                <blockquote class="blockquote text-center mt-4">
+                  <p class="mb-0">{{ quote }}</p>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <img src="../assets/student.jpg" class="d-block mx-lg-auto img-fluid" alt="Student Image" width="700" height="500" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

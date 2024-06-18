@@ -1,0 +1,76 @@
+<style>
+  .butttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+</style>
+
+<section>
+    <div class="container">
+      <h2>Reevaluation Request</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="rollNumber">Roll Number</label>
+          <input type="text" id="rollNumber" class="form-control" [(ngModel)]="reevaluation.rollNumber" name="rollNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" class="form-control" [(ngModel)]="reevaluation.subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="reason">Reason</label>
+          <textarea id="reason" class="form-control" [(ngModel)]="reevaluation.reason" name="reason" required></textarea>
+        </div>
+        <div class="butttons">
+          <div class="submit">
+        <button type="submit" class="btn btn-primary">Submit</button></div>
+        <div class="gpay">
+        <google-pay-button
+        environment="TEST"
+        buttonType="buy"
+        buttonColor="black"
+        [paymentRequest]="{
+          apiVersion: 2,
+          apiVersionMinor: 0,
+          allowedPaymentMethods: [
+            {
+              type: 'CARD',
+              parameters: {
+                allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+              },
+              tokenizationSpecification: {
+                type: 'PAYMENT_GATEWAY',
+                parameters: {
+                  gateway: 'example',
+                  gatewayMerchantId: 'exampleGatewayMerchantId'
+                }
+              }
+            }
+          ],
+          merchantInfo: {
+            merchantId: '12345678901234567890',
+            merchantName: 'Demo Merchant'
+          },
+          transactionInfo: {
+            totalPriceStatus: 'FINAL',
+            totalPriceLabel: 'Total',
+            totalPrice: '100.00',
+            currencyCode: 'USD',
+            countryCode: 'US'
+          }
+        }"
+        [style.width.px]="buttonWidth"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+      
+      ></google-pay-button>
+    </div>
+    </div>
+
+      </form>
+    </div>
+  </section>
+  

@@ -1,0 +1,37 @@
+<section>
+    <div class="container">
+      <h2>Admin Panel</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="rollNumber">Roll Number</label>
+          <input type="text" id="rollNumber" class="form-control" [(ngModel)]="student.rollNumber" name="rollNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="student.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="webTechnology">Web Technology</label>
+          <input type="text" id="webTechnology" class="form-control" [(ngModel)]="student.web_technology" name="webTechnology" required>
+        </div>
+        <div class="form-group">
+          <label for="databaseManagementSystem">DBMS</label>
+          <input type="text" id="databaseManagementSystem" class="form-control" [(ngModel)]="student.database_management_system" name="databaseManagementSystem" required>
+        </div>
+        <div class="form-group">
+          <label for="maths">Maths</label>
+          <input type="text" id="maths" class="form-control" [(ngModel)]="student.maths" name="maths" required>
+        </div>
+        <div class="form-group">
+          <label for="operatingSystem">OS</label>
+          <input type="text" id="operatingSystem" class="form-control" [(ngModel)]="student.operating_system" name="operatingSystem" required>
+        </div>
+        <div class="form-group">
+          <label for="formalLanguageAutomataTheory">FLAT</label>
+          <input type="text" id="formalLanguageAutomataTheory" class="form-control" [(ngModel)]="student.formal_language_automata_theory" name="formalLanguageAutomataTheory" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </section>
+  
